@@ -3,21 +3,6 @@ const todoInputEl = document.querySelector('.todo-input');
 const oneContainer = document.querySelector('.lists');
 const task = JSON.parse(localStorage.getItem('task')) || [];
 
-// addBtn.addEventListener('click', (e) => {
-//   const input = todoInputEl.value;
-//   e.preventDefault();
-//   todoInputEl.value = '';
-//   if (!input) return;
-//   const obj = {
-//     description: input,
-//     completed: false,
-//     index: task.length,
-//   };
-//   task.push(obj);
-//   localStorage.setItem('task', JSON.stringify(task));
-//   renderTasks();
-// });
-
 const renderTasks = () => {
   oneContainer.innerHTML = '';
   task.forEach((element) => {
@@ -35,6 +20,7 @@ const renderTasks = () => {
     oneContainer.appendChild(chore);
   });
 };
+renderTasks();
 
 addBtn.addEventListener('click', (e) => {
   const input = todoInputEl.value;
