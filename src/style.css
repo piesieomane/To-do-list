@@ -1,7 +1,122 @@
-body {
-  background-color: red;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Fira sans', sans-serif;
 }
 
-p {
-  color: white;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 12px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid grey;
+  width: 70%;
+  margin: auto;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+  width: 100%;
+  padding: 1%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.lists {
+  list-style: none;
+  width: 100%;
+}
+
+.list-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  border-bottom: 1px solid #818080;
+}
+
+.lists li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.lists .check {
+  display: flex;
+  align-items: center;
+}
+
+.title h2 {
+  font-size: 2rem;
+  color: #454545;
+}
+
+.lists .check h2 {
+  padding: 0 15px;
+  color: #818080;
+  font-style: italic;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon i {
+  color: #cfcfcf;
+  cursor: cell;
+}
+
+.clear-container {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f8f8;
+  width: 100%;
+}
+
+.input-container input {
+  border: none;
+  padding: 0.4rem;
+}
+
+.input-container input::placeholder {
+  font-style: italic;
+  color: #cfcfcf;
+}
+
+.btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.btn-clear {
+  color: #5c5c5c;
+  font-weight: 700;
 }
