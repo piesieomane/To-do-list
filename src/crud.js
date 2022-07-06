@@ -1,16 +1,21 @@
+import { clear, clearAllTask } from './clear';
+
 const addBtn = document.querySelector('.btn-enter');
 const todoInputEl = document.querySelector('.todo-input');
 const oneContainer = document.querySelector('.lists');
+const clearAll = document.querySelector('.btn-clear');
 const task = JSON.parse(localStorage.getItem('task')) || [];
 
 const renderTasks = () => {
+  const task = JSON.parse(localStorage.getItem('task')) || [];
   oneContainer.innerHTML = '';
   task.forEach((element) => {
     const oneContainer = document.querySelector('.lists');
     const chore = document.createElement('div');
+    const flag = element.completed ? 'checked' : '';
     chore.classList.add('list-info');
     chore.innerHTML = ` <div class="check">
-              <input type="checkbox">
+              <input type="checkbox" class="check" data-clear="${element.index}" ${flag}>
               <input type="text" class="todo" data-desc="${element.index}" value="${element.description}"/>
               </div>
               <div class="icon">
@@ -73,3 +78,10 @@ const update = (e) => {
 };
 
 oneContainer.addEventListener('click', update);
+
+oneContainer.addEventListener('click', clear);
+
+clearAll.addEventListener('click', () => {
+  clearAllTask();
+  renderTasks();
+});
