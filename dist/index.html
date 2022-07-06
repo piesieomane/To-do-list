@@ -1,69 +1,40 @@
-<head><script defer src="main.bundle.js"></script></head>Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module not found: Error: Can't resolve 'C:\Users\PIESIE OMANE\Desktop\To-do-list\src\index.html' in 'C:\Users\PIESIE OMANE\Desktop\To-do-list'
-  ModuleNotFoundError: Module not found: Error: Can't resolve 'C:\Users\PIESIE OMANE\Desktop\To-do-list\src\index.html' in 'C:\Users\PIESIE OMANE\Desktop\T  o-do-list'
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\Compilation.js:2016:28
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:798:13
-      at eval (eval at create (C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:270:22
-      at eval (eval at create (C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:434:22
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:116:11
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:670:25
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:855:8
-      at C:\Users\PIESIE OMANE\Desktop\To-do-list\node_modules\webpack\lib\NormalModuleFactory.js:975:5
-  
-  - Compilation.js:2016 
-    [To-do-list]/[webpack]/lib/Compilation.js:2016:28
-  
-  - NormalModuleFactory.js:798 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:798:13
-  
-  
-  - NormalModuleFactory.js:270 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:270:22
-  
-  
-  - NormalModuleFactory.js:434 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:434:22
-  
-  - NormalModuleFactory.js:116 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:116:11
-  
-  - NormalModuleFactory.js:670 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:670:25
-  
-  - NormalModuleFactory.js:855 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:855:8
-  
-  - NormalModuleFactory.js:975 
-    [To-do-list]/[webpack]/lib/NormalModuleFactory.js:975:5
-  
-  - child-compiler.js:169 
-    [To-do-list]/[html-webpack-plugin]/lib/child-compiler.js:169:18
-  
-  - Compiler.js:551 finalCallback
-    [To-do-list]/[webpack]/lib/Compiler.js:551:5
-  
-  - Compiler.js:577 
-    [To-do-list]/[webpack]/lib/Compiler.js:577:11
-  
-  - Compiler.js:1196 
-    [To-do-list]/[webpack]/lib/Compiler.js:1196:17
-  
-  
-  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
-    [To-do-list]/[tapable]/lib/Hook.js:18:14
-  
-  - Compiler.js:1192 
-    [To-do-list]/[webpack]/lib/Compiler.js:1192:33
-  
-  - Compilation.js:2787 finalCallback
-    [To-do-list]/[webpack]/lib/Compilation.js:2787:11
-  
-  - Compilation.js:3092 
-    [To-do-list]/[webpack]/lib/Compilation.js:3092:11
-  
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  <script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
+  <body>
+    <div class="container">
+      <div class="title-container">
+        <h2>Today's To Do</h2>
+        <button class="btn btn-refresh">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+      </div>
+
+      <form class="input-container" action="">
+        <input
+          class="todo-input"
+          type="text"
+          placeholder="Add to your list..."
+        />
+        <button type="submit" class="btn btn-enter">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </button>
+      </form>
+
+      <div class="lists"></div>
+
+      <div class="clear-container">
+        <button class="btn btn-clear">Clear all completed</button>
+      </div>
+    </div>
+  </body>
+</html>
