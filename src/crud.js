@@ -11,7 +11,7 @@ const renderTasks = () => {
     chore.classList.add('list-info');
     chore.innerHTML = ` <div class="check">
               <input type="checkbox">
-              <h2>${element.description}</h2>
+              <input type="text" class="todo" data-desc="${element.index}" value="${element.description}"/>
               </div>
               <div class="icon">
               <i class="fa-solid fa-trash-can"id ="${element.index}"></i>
@@ -56,3 +56,20 @@ oneContainer.addEventListener('click', (e) => {
     removeTask(index);
   }
 });
+
+const update = (e) => {
+  const clicked = e.target.closest('.todo');
+
+  if (!clicked) return;
+  clicked.addEventListener('keyup', () => {
+    const task = JSON.parse(localStorage.getItem('task')) || [];
+    const targetData = parseInt(clicked.getAttribute('data-desc'), 10);
+
+    const update = task.find((element) => element.index === targetData);
+
+    update.description = clicked.value.trim();
+    localStorage.setItem('task', JSON.stringify(task));
+  });
+};
+
+oneContainer.addEventListener('click', update);
